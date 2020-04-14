@@ -1,0 +1,307 @@
+{
+  "bundle": {
+    "uuid:ac265cde-53f1-4097-bd48-566fcf9d64c3": {
+      "wasGeneratedBy": {
+        "_:wGB3": {
+          "prov:entity": "ex:evolution333483",
+          "prov:activity": "ex:tracing2235694"
+        },
+        "_:wGB4": {
+          "prov:entity": "ex:Order33482",
+          "tmpl:orderTime": {
+            "$": "2012-03-31T09:21:40",
+            "type": "xsd:string"
+          },
+          "prov:activity": "ex:Evaluation261"
+        },
+        "_:wGB5": {
+          "prov:entity": "ex:revision56472",
+          "tmpl:lat": {
+            "$": "75774",
+            "type": "xsd:int"
+          },
+          "tmpl:revisionTime": {
+            "$": "2012-03-31T09:21:40",
+            "type": "xsd:string"
+          },
+          "tmpl:lon": {
+            "$": "6778",
+            "type": "xsd:int"
+          },
+          "prov:activity": "ex:Evaluation261"
+        },
+        "_:wGB1": {
+          "prov:entity": "ex:Order33482",
+          "prov:activity": "ex:Confine22155"
+        },
+        "_:wGB2": {
+          "prov:entity": "ex:Dentista_Dentix",
+          "prov:activity": "ex:consultation_test_34432369"
+        }
+      },
+      "agent": {
+        "ex:DNI2234593": {
+          "foaf:name": {
+            "$": "Boris Josich",
+            "type": "xsd:string"
+          },
+          "foaf:risk": {
+            "$": "44",
+            "type": "xsd:int"
+          },
+          "foaf:tel": {
+            "$": "44415466364",
+            "type": "xsd:string"
+          },
+          "foaf:lon": {
+            "$": "22473",
+            "type": "xsd:int"
+          },
+          "prov:type": {
+            "$": "infected",
+            "type": "xsd:string"
+          },
+          "foaf:email": {
+            "$": "nadad@mont.com",
+            "type": "xsd:string"
+          },
+          "foaf:lat": {
+            "$": "2243",
+            "type": "xsd:int"
+          },
+          "foaf:address": {
+            "$": "Alciras 234",
+            "type": "xsd:string"
+          }
+        },
+        "ex:community41": {
+          "foaf:name": {
+            "$": "infected from Valence city",
+            "type": "xsd:string"
+          },
+          "prov:type": {
+            "$": "infected community",
+            "type": "xsd:string"
+          }
+        }
+      },
+      "activity": {
+        "ex:consultation_test_34432369": {
+          "prov:lat": {
+            "$": "75774",
+            "type": "xsd:int"
+          },
+          "prov:lon": {
+            "$": "6778",
+            "type": "xsd:int"
+          },
+          "prov:type": {
+            "$": "test",
+            "type": "xsd:string"
+          },
+          "prov:title": {
+            "$": "incident resume",
+            "type": "xsd:string"
+          }
+        },
+        "ex:tracing2235694": [
+          {},
+          {
+            "tmpl:tracingTimeEnd": {
+              "$": "2012-03-31T09:21:40",
+              "type": "xsd:string"
+            },
+            "tmpl:tracingTimeStart": {
+              "$": "2012-03-31T09:21:40",
+              "type": "xsd:string"
+            }
+          }
+        ],
+        "ex:Confine22155": {
+          "prov:lat": {
+            "$": "75774",
+            "type": "xsd:int"
+          },
+          "prov:lon": {
+            "$": "6778",
+            "type": "xsd:int"
+          },
+          "prov:title": {
+            "$": "confine resume",
+            "type": "xsd:string"
+          }
+        },
+        "ex:Evaluation261": {
+          "prov:status": {
+            "$": "finished",
+            "type": "xsd:string"
+          },
+          "prov:title": {
+            "$": "evaluation resume",
+            "type": "xsd:string"
+          }
+        }
+      },
+      "actedOnBehalfOf": {
+        "_:aOBO1": {
+          "prov:responsible": "ex:community41",
+          "prov:delegate": "ex:DNI2234593"
+        }
+      },
+      "alternateOf": {
+        "_:aO1": {
+          "prov:alternate2": "ex:diag88893",
+          "prov:alternate1": "ex:anal23493"
+        }
+      },
+      "prefix": {
+        "ex": "http://example.org/",
+        "foaf": "http://xmlns.com/foaf/0.1/",
+        "uuid": "urn:uuid:",
+        "prov": "http://www.w3.org/ns/prov#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "tmpl": "http://openprovenance.org/tmpl#"
+      },
+      "wasAssociatedWith": {
+        "_:wAW2": {
+          "prov:agent": "ex:DNI2234593",
+          "prov:activity": "ex:Confine22155"
+        },
+        "_:wAW3": {
+          "prov:agent": "ex:DNI2234593",
+          "prov:role": {
+            "$": "citizen",
+            "type": "xsd:string"
+          },
+          "prov:activity": "ex:consultation_test_34432369"
+        },
+        "_:wAW4": {
+          "prov:type": {
+            "$": "dentist",
+            "type": "xsd:string"
+          },
+          "prov:agent": "ex:Dentista_Dentix",
+          "prov:activity": "ex:consultation_test_34432369"
+        },
+        "_:wAW1": {
+          "prov:agent": "ex:DNI2234593",
+          "prov:activity": "ex:consultation_test_34432369"
+        }
+      },
+      "wasDerivedFrom": {
+        "_:wDF2": {
+          "prov:generatedEntity": "ex:revision56472",
+          "prov:usedEntity": "ex:evolution333483"
+        },
+        "_:wDF3": {
+          "prov:type": {
+            "$": "revision data",
+            "type": "xsd:string"
+          },
+          "prov:generatedEntity": "ex:revision56472",
+          "prov:usedEntity": "ex:Order33482"
+        },
+        "_:wDF4": {
+          "prov:generatedEntity": "ex:tracing2235694",
+          "prov:usedEntity": "ex:protocolXS"
+        },
+        "_:wDF5": {
+          "prov:type": {
+            "$": "ADN secuence",
+            "type": "xsd:string"
+          },
+          "prov:generatedEntity": "ex:secFSD72",
+          "prov:usedEntity": "ex:CH2233373"
+        },
+        "_:wDF1": {
+          "prov:type": {
+            "$": "evolution data",
+            "type": "xsd:string"
+          },
+          "prov:generatedEntity": "ex:evolution333483",
+          "prov:usedEntity": "ex:R22283"
+        },
+        "_:wDF6": {
+          "prov:generatedEntity": "ex:anal23493",
+          "prov:usedEntity": "ex:evolution333483"
+        },
+        "_:wDF7": {
+          "prov:generatedEntity": "ex:diag88893",
+          "prov:usedEntity": "ex:R22283"
+        }
+      },
+      "wasAttributedTo": {
+        "_:wAT1": {
+          "prov:entity": "ex:Order33482",
+          "prov:agent": "ex:DNI2234593"
+        }
+      },
+      "used": {
+        "_:u2": {
+          "prov:entity": "ex:Alicante",
+          "prov:role": {
+            "$": "Comunidad Valenciana",
+            "type": "xsd:string"
+          },
+          "prov:activity": "ex:consultation_test_34432369"
+        },
+        "_:u1": {
+          "prov:entity": "ex:R22283",
+          "prov:role": {
+            "$": "2012-03-31T09:21:40",
+            "type": "xsd:string"
+          },
+          "prov:activity": "ex:consultation_test_34432369"
+        }
+      },
+      "entity": {
+        "ex:protocolXS": {
+          "prov:title": {
+            "$": "protocol resume",
+            "type": "xsd:string"
+          }
+        },
+        "ex:Order33482": {
+          "prov:title": {
+            "$": "order resume",
+            "type": "xsd:string"
+          }
+        },
+        "ex:diag88893": {},
+        "ex:anal23493": {},
+        "ex:evolution333483": {},
+        "ex:CH2233373": {
+          "prov:title": {
+            "$": "resume clinic history",
+            "type": "xsd:string"
+          }
+        },
+        "ex:R22283": {
+          "prov:title": {
+            "$": "title report",
+            "type": "xsd:string"
+          }
+        },
+        "ex:Alicante": {
+          "prov:name": {
+            "$": "Alicante",
+            "type": "xsd:string"
+          }
+        },
+        "ex:revision56472": {},
+        "ex:Dentista_Dentix": {},
+        "ex:secFSD72": {}
+      },
+      "specializationOf": {
+        "_:sO1": {
+          "prov:specificEntity": "ex:diag88893",
+          "prov:generalEntity": "ex:CH2233373"
+        },
+        "_:sO2": {
+          "prov:specificEntity": "ex:anal23493",
+          "prov:generalEntity": "ex:CH2233373"
+        }
+      }
+    }
+  }
+}

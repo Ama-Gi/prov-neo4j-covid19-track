@@ -1,0 +1,76 @@
+document
+ prefix tmpl <http://openprovenance.org/tmpl#>
+ prefix var <http://openprovenance.org/var#>
+ prefix vargen <http://openprovenance.org/vargen#>
+ prefix prov <http://www.w3.org/ns/prov#>
+ prefix ex <http://www.example.org#>
+ prefix prov <http://purl.org/dc/terms/>
+ prefix foaf <http://xmlns.com/foaf/0.1/>
+
+ bundle vargen:b
+
+    entity(var:clinicHistory, [prov:title='var:clinicHistoryResume'])
+    entity(var:report, [prov:title='var:reportTitle'])
+    entity(var:region, [prov:name='var:regionName'])
+    entity(var:entity)
+    entity(var:order, [prov:title='var:orderResume', prov:status='var:entityStatus'])
+
+
+    activity(var:evaluation, [prov:title='var:evaluationResume', prov:status='var:evaluationStatus'])
+    activity(var:incident, [prov:title='var:incidentResume', prov:type='var:incidentType', prov:lat='var:incidentLat', prov:lon='var:incidentLon'])
+    activity(var:confine, [prov:title='var:confineResume', prov:lat='var:confineLat', prov:lon='var:confineLon'])
+
+
+   // used(var:confine, var:entity, -)
+    wasGeneratedBy(var:order, var:confine, -)
+    wasGeneratedBy(var:entity, var:confine, -)
+
+
+
+    wasAssociatedWith(var:confine, var:person, -)
+    agent(var:person, [prov:type='var:personType', foaf:name='var:personName', foaf:risk='var:personRisk', foaf:tel='var:personTelephone', foaf:email='var:personEmail', foaf:address='var:personAddress', foaf:lat='var:personLat', foaf:lon='var:personLon'])
+    agent(var:community, [prov:type='var:typeCommunity', foaf:name='var:nameCommunity'])
+    actedOnBehalfOf(var:person, var:community)
+
+    wasAttributedTo(var:order, var:person)
+
+
+    used(var:incident, var:report, -, [prov:role='var:reportData'])
+    used(var:incident, var:region, -, [prov:role='var:regionsToAggregateBy'])
+//    used(var:incident, var:entity, -, [prov:type='var:entityType'] )
+
+    wasAssociatedWith(var:incident, var:person, -, [prov:role='var:personRole'])
+    wasAssociatedWith(var:incident, var:entity, -, [prov:type='var:entityType'])
+
+
+    entity(var:evolution)
+    wasDerivedFrom(var:evolution, var:report, [prov:type='var:evolutionData'])
+    wasDerivedFrom(var:revision, var:evolution)
+    entity(var:revision)
+    wasDerivedFrom(var:revision, var:order, [prov:type='var:revisionData'])
+
+
+    activity(var:tracing)
+  //  agent(var:agent, [prov:type='var:agentType', foaf:contact='var:agentContact'])
+    entity(var:protocol, [prov:title='var:protocolResume'])
+ //   wasAssociatedWith(var:tracing, var:agent, var:protocol)
+    wasDerivedFrom(var:tracing, var:protocol)
+    wasGeneratedBy(var:evolution, var:tracing, -)
+
+
+    wasGeneratedBy(var:order, var:evaluation, -, [tmpl:orderTime='var:orderTime'] )
+    wasGeneratedBy(var:revision, var:evaluation, -, [tmpl:revisionTime='var:revisionTime', tmpl:lat='var:revisionLat', tmpl:lon='var:revisionLon'] )
+    activity(var:tracing, -, -, [tmpl:tracingTimeStart='var:tracingTimeStart',tmpl:tracingTimeEnd='var:tracingTimeEnd'] )
+
+    entity(var:genetics)
+    wasDerivedFrom(var:genetics, var:clinicHistory, [prov:type='var:geneticsType'])
+
+    entity(var:diagnostics)
+    entity(var:tests)
+    specializationOf(var:diagnostics, var:clinicHistory)
+    specializationOf(var:tests, var:clinicHistory)
+    alternateOf(var:tests, var:diagnostics)
+    wasDerivedFrom(var:tests, var:evolution)
+    wasDerivedFrom(var:diagnostics, var:report)
+ endBundle
+endDocument
