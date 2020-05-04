@@ -28,7 +28,7 @@ prov_api = ProvDb(adapter=Neo4jAdapter, auth_info=auth_info)
 for line in range(3, 44):
     os.system('cat csv1.csv | awk -v line='+str(line)+' -f tobindings.awk > bindings.json')
     os.system('provconvert -bindver 3 -infile template_block.provn -bindings bindings.json -outfile block.json')
-    os.system('provconvert o-bindver 3 -infile template_block.provn -bindings bindings.json -outfile block'+str(line)+'.pdf')
+    os.system('provconvert -bindver 3 -infile template_block.provn -bindings bindings.json -outfile block'+str(line)+'.pdf')
 # create the prov document from examples    prov_document_buffer = pkg_resources.resource_stream("examples", "block.json")
     prov_document_buffer = pkg_resources.resource_stream("examples", "block.json")
     print(line)

@@ -1,33 +1,33 @@
 {
   "bundle": {
-    "uuid:ac265cde-53f1-4097-bd48-566fcf9d64c3": {
+    "uuid:93c40a53-b66d-49c1-bd9b-decf5ad4f673": {
       "wasGeneratedBy": {
         "_:wGB3": {
           "prov:entity": "ex:evolution333483",
           "prov:activity": "ex:tracing2235694"
         },
         "_:wGB4": {
-          "prov:entity": "ex:Order33482",
-          "tmpl:orderTime": {
+          "prov:orderTime": {
             "$": "2012-03-31T09:21:40",
             "type": "xsd:string"
           },
+          "prov:entity": "ex:Order33482",
           "prov:activity": "ex:Evaluation261"
         },
         "_:wGB5": {
-          "prov:entity": "ex:revision56472",
-          "tmpl:lat": {
+          "prov:lat": {
             "$": "75774",
             "type": "xsd:int"
           },
-          "tmpl:revisionTime": {
+          "prov:revisionTime": {
             "$": "2012-03-31T09:21:40",
             "type": "xsd:string"
           },
-          "tmpl:lon": {
+          "prov:lon": {
             "$": "6778",
             "type": "xsd:int"
           },
+          "prov:entity": "ex:revision56472",
           "prov:activity": "ex:Evaluation261"
         },
         "_:wGB1": {
@@ -36,24 +36,36 @@
         },
         "_:wGB2": {
           "prov:entity": "ex:Dentista_Dentix",
-          "prov:activity": "ex:consultation_test_34432369"
+          "prov:activity": "ex:Confine22155"
         }
       },
       "agent": {
-        "ex:DNI2234593": {
-          "foaf:name": {
-            "$": "Boris Josich",
+        "ex:RID88905": {
+          "prov:name": {
+            "$": "800235606",
             "type": "xsd:string"
-          },
-          "foaf:risk": {
-            "$": "44",
+          }
+        },
+        "ex:CI882323474": {
+          "prov:name": {
+            "$": "3492444237",
+            "type": "xsd:string"
+          }
+        },
+        "ex:DNI2234593": {
+          "prov:lat": {
+            "$": "2243",
             "type": "xsd:int"
           },
-          "foaf:tel": {
+          "prov:email": {
+            "$": "nadad@mont.com",
+            "type": "xsd:string"
+          },
+          "prov:tel": {
             "$": "44415466364",
             "type": "xsd:string"
           },
-          "foaf:lon": {
+          "prov:lon": {
             "$": "22473",
             "type": "xsd:int"
           },
@@ -61,26 +73,26 @@
             "$": "infected",
             "type": "xsd:string"
           },
-          "foaf:email": {
-            "$": "nadad@mont.com",
+          "prov:name": {
+            "$": "Boris Josich",
             "type": "xsd:string"
           },
-          "foaf:lat": {
-            "$": "2243",
+          "prov:risk": {
+            "$": "44",
             "type": "xsd:int"
           },
-          "foaf:address": {
+          "prov:address": {
             "$": "Alciras 234",
             "type": "xsd:string"
           }
         },
-        "ex:community41": {
-          "foaf:name": {
-            "$": "infected from Valence city",
+        "ex:NavalIndustryInc": {
+          "prov:type": {
+            "$": "Industry",
             "type": "xsd:string"
           },
-          "prov:type": {
-            "$": "infected community",
+          "prov:name": {
+            "$": "Naval Industry",
             "type": "xsd:string"
           }
         }
@@ -99,7 +111,7 @@
             "$": "test",
             "type": "xsd:string"
           },
-          "prov:title": {
+          "prov:resume": {
             "$": "incident resume",
             "type": "xsd:string"
           }
@@ -107,11 +119,11 @@
         "ex:tracing2235694": [
           {},
           {
-            "tmpl:tracingTimeEnd": {
+            "prov:tracingTimeStart": {
               "$": "2012-03-31T09:21:40",
               "type": "xsd:string"
             },
-            "tmpl:tracingTimeStart": {
+            "prov:tracingTimeEnd": {
               "$": "2012-03-31T09:21:40",
               "type": "xsd:string"
             }
@@ -126,7 +138,7 @@
             "$": "6778",
             "type": "xsd:int"
           },
-          "prov:title": {
+          "prov:resume": {
             "$": "confine resume",
             "type": "xsd:string"
           }
@@ -136,7 +148,7 @@
             "$": "finished",
             "type": "xsd:string"
           },
-          "prov:title": {
+          "prov:resume": {
             "$": "evaluation resume",
             "type": "xsd:string"
           }
@@ -144,7 +156,7 @@
       },
       "actedOnBehalfOf": {
         "_:aOBO1": {
-          "prov:responsible": "ex:community41",
+          "prov:responsible": "ex:NavalIndustryInc",
           "prov:delegate": "ex:DNI2234593"
         }
       },
@@ -155,19 +167,13 @@
         }
       },
       "prefix": {
-        "ex": "http://example.org/",
-        "foaf": "http://xmlns.com/foaf/0.1/",
-        "uuid": "urn:uuid:",
-        "prov": "http://www.w3.org/ns/prov#",
         "xsd": "http://www.w3.org/2001/XMLSchema#",
-        "tmpl": "http://openprovenance.org/tmpl#"
+        "prov": "http://www.w3.org/ns/prov#",
+        "ex": "http://example.org/",
+        "uuid": "urn:uuid:"
       },
       "wasAssociatedWith": {
         "_:wAW2": {
-          "prov:agent": "ex:DNI2234593",
-          "prov:activity": "ex:Confine22155"
-        },
-        "_:wAW3": {
           "prov:agent": "ex:DNI2234593",
           "prov:role": {
             "$": "citizen",
@@ -175,7 +181,23 @@
           },
           "prov:activity": "ex:consultation_test_34432369"
         },
+        "_:wAW3": {
+          "prov:agent": "ex:CI882323474",
+          "prov:role": {
+            "$": "sanitary",
+            "type": "xsd:string"
+          },
+          "prov:activity": "ex:Evaluation261"
+        },
         "_:wAW4": {
+          "prov:agent": "ex:RID88905",
+          "prov:role": {
+            "$": "pharmacist",
+            "type": "xsd:string"
+          },
+          "prov:activity": "ex:tracing2235694"
+        },
+        "_:wAW5": {
           "prov:type": {
             "$": "dentist",
             "type": "xsd:string"
@@ -185,7 +207,7 @@
         },
         "_:wAW1": {
           "prov:agent": "ex:DNI2234593",
-          "prov:activity": "ex:consultation_test_34432369"
+          "prov:activity": "ex:Confine22155"
         }
       },
       "wasDerivedFrom": {
@@ -230,12 +252,6 @@
           "prov:usedEntity": "ex:R22283"
         }
       },
-      "wasAttributedTo": {
-        "_:wAT1": {
-          "prov:entity": "ex:Order33482",
-          "prov:agent": "ex:DNI2234593"
-        }
-      },
       "used": {
         "_:u2": {
           "prov:entity": "ex:Alicante",
@@ -262,7 +278,11 @@
           }
         },
         "ex:Order33482": {
-          "prov:title": {
+          "prov:status": {
+            "$": "finished",
+            "type": "xsd:string"
+          },
+          "prov:name": {
             "$": "order resume",
             "type": "xsd:string"
           }
@@ -271,13 +291,13 @@
         "ex:anal23493": {},
         "ex:evolution333483": {},
         "ex:CH2233373": {
-          "prov:title": {
+          "prov:name": {
             "$": "resume clinic history",
             "type": "xsd:string"
           }
         },
         "ex:R22283": {
-          "prov:title": {
+          "prov:name": {
             "$": "title report",
             "type": "xsd:string"
           }

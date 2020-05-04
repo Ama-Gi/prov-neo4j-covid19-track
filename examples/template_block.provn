@@ -6,65 +6,59 @@ document
  prefix ex <http://www.example.org#>
  prefix prov <http://purl.org/dc/terms/>
  prefix foaf <http://xmlns.com/foaf/0.1/>
+ prefix dcterms <http://purl.org/dc/terms/>
 
  bundle vargen:b
-
-    entity(var:clinicHistory, [prov:title='var:clinicHistoryResume'])
-    entity(var:report, [prov:title='var:reportTitle'])
+// Entities
+    entity(var:clinicHistory, [prov:name='var:clinicHistoryTitle'])
+    entity(var:report, [prov:name='var:reportName'])
     entity(var:region, [prov:name='var:regionName'])
     entity(var:entity)
-    entity(var:order, [prov:title='var:orderResume', prov:status='var:entityStatus'])
-
-
-    activity(var:evaluation, [prov:title='var:evaluationResume', prov:status='var:evaluationStatus'])
-    activity(var:incident, [prov:title='var:incidentResume', prov:type='var:incidentType', prov:lat='var:incidentLat', prov:lon='var:incidentLon'])
-    activity(var:confine, [prov:title='var:confineResume', prov:lat='var:confineLat', prov:lon='var:confineLon'])
-
-
+    entity(var:order, [prov:name='var:orderName', prov:status='var:orderStatus'])
+// Activities
+    activity(var:evaluation, [prov:resume='var:evaluationResume', prov:status='var:evaluationStatus'])
+    activity(var:incident, [prov:resume='var:incidentResume', prov:type='var:incidentType', prov:lat='var:incidentLat', prov:lon='var:incidentLon'])
+    activity(var:confine, [prov:resume='var:confineResume', prov:lat='var:confineLat', prov:lon='var:confineLon'])
+// Usage and Generation
    // used(var:confine, var:entity, -)
     wasGeneratedBy(var:order, var:confine, -)
     wasGeneratedBy(var:entity, var:confine, -)
-
-
-
+// Agents and Responsibility
     wasAssociatedWith(var:confine, var:person, -)
-    agent(var:person, [prov:type='var:personType', foaf:name='var:personName', foaf:risk='var:personRisk', foaf:tel='var:personTelephone', foaf:email='var:personEmail', foaf:address='var:personAddress', foaf:lat='var:personLat', foaf:lon='var:personLon'])
-    agent(var:community, [prov:type='var:typeCommunity', foaf:name='var:nameCommunity'])
-    actedOnBehalfOf(var:person, var:community)
-
-    wasAttributedTo(var:order, var:person)
-
-
+    agent(var:person, [prov:type='var:personType', prov:name='var:personName', prov:risk='var:personRisk', prov:tel='var:personTelephone', prov:email='var:personEmail', prov:address='var:personAddress', prov:lat='var:personLat', prov:lon='var:personLon'])
+    agent(var:agency, [prov:type='var:typeAgency', prov:name='var:nameAgency'])
+    agent(var:agent, [prov:type='var:agentType', prov:name='var:agentContact'])
+    agent(var:researcher, [prov:type='var:researcherType', prov:name='var:researcherContact'])
+    actedOnBehalfOf(var:person, var:agency)
+    // wasAttributedTo(var:order, var:agent)
+//  Roles
     used(var:incident, var:report, -, [prov:role='var:reportData'])
     used(var:incident, var:region, -, [prov:role='var:regionsToAggregateBy'])
-//    used(var:incident, var:entity, -, [prov:type='var:entityType'] )
-
+    // used(var:incident, var:entity, -, [prov:type='var:entityType'] )
     wasAssociatedWith(var:incident, var:person, -, [prov:role='var:personRole'])
+    wasAssociatedWith(var:evaluation, var:agent, -, [prov:role='var:agentRole'])
+    wasAssociatedWith(var:tracing, var:researcher, -, [prov:role='var:researcherRole'])
     wasAssociatedWith(var:incident, var:entity, -, [prov:type='var:entityType'])
-
-
+// Derivation and Revision
     entity(var:evolution)
     wasDerivedFrom(var:evolution, var:report, [prov:type='var:evolutionData'])
     wasDerivedFrom(var:revision, var:evolution)
     entity(var:revision)
     wasDerivedFrom(var:revision, var:order, [prov:type='var:revisionData'])
-
-
+// Plans
     activity(var:tracing)
-  //  agent(var:agent, [prov:type='var:agentType', foaf:contact='var:agentContact'])
+    // agent(var:agent, [prov:type='var:agentType', prov:contact='var:agentContact'])
     entity(var:protocol, [prov:title='var:protocolResume'])
- //   wasAssociatedWith(var:tracing, var:agent, var:protocol)
+    // wasAssociatedWith(var:tracing, var:agent, var:protocol)
     wasDerivedFrom(var:tracing, var:protocol)
     wasGeneratedBy(var:evolution, var:tracing, -)
-
-
-    wasGeneratedBy(var:order, var:evaluation, -, [tmpl:orderTime='var:orderTime'] )
-    wasGeneratedBy(var:revision, var:evaluation, -, [tmpl:revisionTime='var:revisionTime', tmpl:lat='var:revisionLat', tmpl:lon='var:revisionLon'] )
-    activity(var:tracing, -, -, [tmpl:tracingTimeStart='var:tracingTimeStart',tmpl:tracingTimeEnd='var:tracingTimeEnd'] )
-
+// Time
+    wasGeneratedBy(var:order, var:evaluation, -, [prov:orderTime='var:orderTime'] )
+    wasGeneratedBy(var:revision, var:evaluation, -, [prov:revisionTime='var:revisionTime', prov:lat='var:revisionLat', prov:lon='var:revisionLon'] )
+    activity(var:tracing, -, -, [prov:tracingTimeStart='var:tracingTimeStart',prov:tracingTimeEnd='var:tracingTimeEnd'] )
+// Alternate Entities and Specialization
     entity(var:genetics)
     wasDerivedFrom(var:genetics, var:clinicHistory, [prov:type='var:geneticsType'])
-
     entity(var:diagnostics)
     entity(var:tests)
     specializationOf(var:diagnostics, var:clinicHistory)
